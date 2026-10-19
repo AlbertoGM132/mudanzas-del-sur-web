@@ -201,13 +201,13 @@ export default function Calculadora() {
           {estudio.sin_precio ? (
             <>
               <h2 className="h2" style={{ margin: "14px 0 10px" }}>{nombre}, este lo calculamos <em>a mano.</em></h2>
-              <p className="lead">Por la distancia ({estudio.km} km en total) preferimos que Alberto te prepare el precio personalmente. Ya tiene tus datos y tus fotos: te escribe por WhatsApp.</p>
+              <p className="lead">Por la distancia ({estudio.km} km en total) preferimos prepararte el precio personalmente. Ya tenemos tus datos y tus fotos: te escribimos por WhatsApp.</p>
             </>
           ) : (
             <>
               <p className="muted" style={{ marginTop: 14 }}>{nombre}, tu mudanza saldría entre</p>
               <div className="precio"><span><Contador a={estudio.min!} /> €</span><i>y</i><span><Contador a={estudio.max!} /> €</span></div>
-              <p className="muted small">Precio orientativo, sin compromiso. El precio final te lo confirma Alberto por WhatsApp después de revisar tus fotos.</p>
+              <p className="muted small">Precio orientativo, sin compromiso. El precio final te lo confirmamos por WhatsApp después de revisar tus fotos.</p>
             </>
           )}
           <dl className="resumen">

@@ -18,7 +18,7 @@ export default function Page() {
           <div className="wrap">
             <span className="kicker">Calculadora con IA · gratis</span>
             <h1 className="display h1">Calcula tu mudanza <em>en dos minutos.</em></h1>
-            <p className="lead">Fotos de tus cosas, las dos direcciones y dónde puede parar el camión. Te enseñamos un precio orientativo con nuestras tarifas reales y Alberto te lo confirma por WhatsApp.</p>
+            <p className="lead">Fotos de tus cosas, las dos direcciones y dónde puede parar el camión. Te enseñamos un precio orientativo con nuestras tarifas reales y te lo confirmamos por WhatsApp.</p>
           </div>
         </section>
         <section style={{ paddingBottom: 96 }}>
