@@ -115,6 +115,24 @@ El comando `firebase deploy` sube el contenido de `out/` al proyecto `mudanzas-d
 
 ---
 
+## Funciones de IA (asistente, calculadora, contacto)
+
+La web llama a la función `web_api` del proyecto de Firebase de MudanzaPro
+(`smartsonubalogictis`, repo `gestor-mudanzas-pwa`): asistente de chat «Sur», lectura de fotos con
+IA (Gemini), calculadora de mudanza y formulario de contacto. Todo lo que envía el cliente entra
+en MudanzaPro como **solicitud**. La clave de la IA vive solo en el servidor (secreto `GEMINI_KEY`).
+
+- `/calculadora` — fotos → inventario con IA → direcciones y ruta (OpenStreetMap/OSRM) → dónde
+  para el camión → precio orientativo con las tarifas reales de la app.
+- La dirección de la función se puede cambiar con `NEXT_PUBLIC_WEB_API`.
+
+### Versión de prueba con dominio temporal
+
+```bash
+npm run build
+firebase hosting:channel:deploy prueba --expires 14d
+```
+
 ## Variables de entorno
 
 Este proyecto no requiere variables de entorno para funcionar. El endpoint de Formspree está referenciado directamente en `src/app/contacto/page.tsx`.

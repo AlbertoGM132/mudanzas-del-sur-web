@@ -69,7 +69,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, rgba(17,24,32,0.92) 0%, rgba(17,24,32,0.72) 55%, rgba(17,24,32,0.35) 100%)",
+                "linear-gradient(90deg, rgba(20,26,51,0.92) 0%, rgba(20,26,51,0.72) 55%, rgba(20,26,51,0.35) 100%)",
             }}
           />
         </div>
@@ -130,7 +130,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                   <div key={i} className="mb-10 reveal-item">
                     <h2
                       className="font-heading font-800 text-xl md:text-2xl text-foreground mb-3"
-                      style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}
+                      style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
                     >
                       {block.title}
                     </h2>
@@ -154,13 +154,13 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                   <div
                     key={i}
                     className="reveal-item mb-10 rounded-2xl p-6 md:p-8 border border-primary/20"
-                    style={{ background: "rgba(232,80,10,0.05)" }}
+                    style={{ background: "rgba(232,89,12,0.05)" }}
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <Icon name="LightBulbIcon" size={20} className="text-primary" variant="solid" />
                       <span
                         className="font-heading font-800 text-base text-primary"
-                        style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}
+                        style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
                       >
                         {block.title}
                       </span>
@@ -177,7 +177,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
             <div className="reveal-item mt-12 rounded-3xl bg-secondary p-8 md:p-10 text-center">
               <h3
                 className="font-heading font-800 text-2xl text-white mb-3"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}
+                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
               >
                 ¿Planeas una mudanza en Huelva?
               </h3>
@@ -205,7 +205,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
           <div className="mb-8 reveal-item">
             <h2
               className="font-heading font-800 text-2xl md:text-3xl text-foreground"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}
+              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
             >
               Otros artículos del blog
             </h2>
@@ -244,14 +244,14 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                   </div>
                   <h3
                     className="font-heading font-800 text-base text-foreground leading-snug mb-3 group-hover:text-primary transition-colors flex-1"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}
+                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
                   >
                     {related.title}
                   </h3>
                   <Link
                     href={`/blog/${related.slug}`}
                     className="inline-flex items-center gap-2 text-primary font-heading font-700 text-sm hover:gap-3 transition-all mt-2"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}
+                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
                   >
                     Leer más <Icon name="ArrowRightIcon" size={16} />
                   </Link>
