@@ -278,10 +278,10 @@ export default function Home() {
               <span className="chip photo-note">📍 Foto real · Huelva</span>
             </div>
             <div className="reveal" style={{ ["--d" as string]: ".1s" }}>
-              <span className="kicker">Somos de aquí</span>
-              <h2 className="h2" style={{ margin: "18px 0 20px" }}>Una empresa de aquí, <em>de trato cercano.</em></h2>
-              <p className="lead">Mudanzas del Sur nace en Huelva. Vamos a cada trabajo con nuestro propio equipo: por eso cuidamos tus cosas como si fueran nuestras, y por eso el precio que te damos es el que pagas.</p>
-              <p className="lead" style={{ marginTop: 14 }}>Trabajamos en toda la provincia, Sevilla y el resto de Andalucía, y salimos a cualquier punto de la península.</p>
+              <span className="kicker">Nuestra historia</span>
+              <h2 className="h2" style={{ margin: "18px 0 20px" }}>Más que transportar muebles, <em>acompañamos nuevos comienzos.</em></h2>
+              <p className="lead">Detrás de cada camión de Mudanzas del Sur y frente a cada edificio, hay una historia que cambia. Una familia que crece, una pareja que empieza su convivencia o alguien que emprende una nueva aventura en otro lugar.</p>
+              <p className="lead" style={{ marginTop: 14 }}>Nos encanta nuestro trabajo porque no solo transportamos objetos: transportamos vuestros recuerdos y vuestras ilusiones.</p>
               <p className="sign">— El equipo de Mudanzas del Sur</p>
             </div>
           </div>
