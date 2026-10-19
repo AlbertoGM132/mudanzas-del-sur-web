@@ -82,3 +82,8 @@ serviceAccountKey.json
 # Next.js build output
 .next/
 out/
+
+# Claves y secretos: nunca al repositorio
+clave.txt
+*.key
+.env*
