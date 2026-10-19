@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <img src="/assets/img/logo-claro.webp" alt="Mudanzas del Sur" width={150} height={72} style={{ height: 64, width: "auto" }} />
             <p style={{ marginTop: 18, color: "rgba(243,234,219,.7)", maxWidth: "26em" }}>
-              Mudanzas y portes en Huelva, Sevilla y toda Andalucía. Los dos socios, Alberto y Cristian, van en persona a cada trabajo.
+              Mudanzas y portes en Huelva, Sevilla y toda Andalucía, con nuestro propio equipo en cada trabajo.
             </p>
           </div>
           <div>

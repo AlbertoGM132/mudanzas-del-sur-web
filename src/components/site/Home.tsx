@@ -4,13 +4,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "./ContactForm";
 import { EMAIL, PUEBLOS, RESENAS_URL, TEL, TEL_HREF, wa } from "@/lib/site";
-import { IArrow, ICamera, IEuro, IMail, IPhone, IPin, IShield, ISpark, ITools, ITruck, IUsers, IWhatsApp } from "./Icons";
+import { IArrow, ICamera, IClock, IEuro, IMail, IPhone, IPin, IShield, ISpark, ITools, ITruck, IWhatsApp } from "./Icons";
 
 export const FAQS: { q: string; a: React.ReactNode; texto: string }[] = [
   {
     q: "¿Cómo calculáis el precio de una mudanza?",
-    texto: "Depende sobre todo del volumen (cuántas cosas hay), de los kilómetros, de los pisos sin ascensor, de si el camión puede parar cerca del portal, del desmontaje y montaje de muebles y de si embalamos nosotros. Con la calculadora de la web tienes un precio orientativo al momento y Alberto te confirma el precio final por WhatsApp.",
-    a: <>Depende sobre todo del <b>volumen</b> (cuántas cosas hay), de los <b>kilómetros</b>, de los <b>pisos sin ascensor</b>, de si el camión puede parar cerca del portal, del <b>desmontaje y montaje</b> y de si embalamos nosotros. Con la <Link href="/calculadora/">calculadora</Link> tienes un precio orientativo al momento y Alberto te confirma el precio final por WhatsApp.</>,
+    texto: "Depende sobre todo del volumen (cuántas cosas hay), de los kilómetros, de los pisos sin ascensor, de si el camión puede parar cerca del portal, del desmontaje y montaje de muebles y de si embalamos nosotros. Con la calculadora de la web tienes un precio orientativo al momento y te confirmamos el precio final por WhatsApp.",
+    a: <>Depende sobre todo del <b>volumen</b> (cuántas cosas hay), de los <b>kilómetros</b>, de los <b>pisos sin ascensor</b>, de si el camión puede parar cerca del portal, del <b>desmontaje y montaje</b> y de si embalamos nosotros. Con la <Link href="/calculadora/">calculadora</Link> tienes un precio orientativo al momento y te confirmamos el precio final por WhatsApp.</>,
   },
   {
     q: "¿El presupuesto es gratis? ¿Puede cambiar el precio?",
@@ -53,14 +53,14 @@ const PILARES = [
   { ico: <IEuro />, t: "Precio cerrado", p: "El presupuesto que aceptas es el que pagas. Sin extras escondidos ni letra pequeña." },
   { ico: <IShield />, t: "Tus muebles, protegidos", p: "Mantas, film y esquineros en cada mueble antes de que salga por la puerta." },
   { ico: <ITools />, t: "Desmontamos y montamos", p: "Armarios, canapés y camas: los desmontamos y te los dejamos montados en la casa nueva." },
-  { ico: <IUsers />, t: "Los socios, en persona", p: "Alberto y Cristian van a cada mudanza con su equipo. Nada de subcontratas." },
+  { ico: <IClock />, t: "Puntuales, siempre", p: "Llegamos a la hora acordada y terminamos en el tiempo que te dijimos. Tu día de mudanza ya es bastante largo." },
 ];
 
 const PASOS = [
   { t: "Haz fotos de tus cosas", p: "Sube unas fotos de cada habitación. La IA reconoce los muebles y calcula los metros cúbicos.", tag: "IA de visión" },
   { t: "Marca el camino", p: "Pon de dónde a dónde, el piso y el ascensor, y señala en el mapa dónde puede parar el camión.", tag: "Mapa interactivo" },
   { t: "Precio orientativo al momento", p: "Te enseñamos un rango con nuestras tarifas reales: vehículo, personas y horas.", tag: "Estudio personalizado" },
-  { t: "Te lo confirmamos y a mudarse", p: "Alberto revisa tus fotos, te confirma el precio por WhatsApp y fijamos el día.", tag: "Trato humano" },
+  { t: "Te lo confirmamos y a mudarse", p: "Revisamos tus fotos, te confirmamos el precio por WhatsApp y fijamos el día.", tag: "Trato humano" },
 ];
 
 const OPINIONES = [
@@ -98,7 +98,7 @@ export default function Home() {
               <div className="hero-trust">
                 <span><IEuro />Presupuesto gratis</span>
                 <span><IShield />Precio cerrado</span>
-                <span><IUsers />Los socios van en persona</span>
+                <span><IWhatsApp />Respuesta rápida por WhatsApp</span>
               </div>
             </div>
             <div className="hero-visual">
@@ -145,7 +145,7 @@ export default function Home() {
             <div className="stats">
               <div className="stat reveal"><b>+<span data-count="500">500</span></b><span>trabajos hechos en Huelva y alrededores</span></div>
               <div className="stat reveal" style={{ ["--d" as string]: ".08s" }}><b><span data-count="20">20</span><sup>m³</sup></b><span>de camión carrozado para hacerlo en un solo viaje</span></div>
-              <div className="stat reveal" style={{ ["--d" as string]: ".16s" }}><b><span data-count="2">2</span><sup>socios</sup></b><span>en persona en cada mudanza</span></div>
+              <div className="stat reveal" style={{ ["--d" as string]: ".16s" }}><b><span data-count="15">15</span><sup>%</sup></b><span>de descuento en tu primera mudanza con nosotros</span></div>
               <div className="stat reveal" style={{ ["--d" as string]: ".24s" }}><b><span data-count="0">0</span><sup>€</sup></b><span>cuesta pedir presupuesto, sin compromiso</span></div>
             </div>
           </div>
@@ -243,7 +243,7 @@ export default function Home() {
               <ul className="checks">
                 <li><i>1</i><span><b>La IA mira tus fotos</b> y hace la lista de muebles y los metros cúbicos. Tú la corriges si hace falta.</span></li>
                 <li><i>2</i><span><b>Marcas en el mapa</b> las dos direcciones y dónde puede parar el camión. Calculamos los metros hasta tu portal.</span></li>
-                <li><i>3</i><span><b>Te sale un precio orientativo</b> con nuestras tarifas reales, y Alberto te lo confirma por WhatsApp.</span></li>
+                <li><i>3</i><span><b>Te sale un precio orientativo</b> con nuestras tarifas reales, y te lo confirmamos por WhatsApp.</span></li>
               </ul>
               <div className="btn-row-inline" style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
                 <Link href="/calculadora/" className="btn btn-accent">Calcular mi mudanza<IArrow className="arrow" /></Link>
@@ -278,11 +278,11 @@ export default function Home() {
               <span className="chip photo-note">📍 Foto real · Huelva</span>
             </div>
             <div className="reveal" style={{ ["--d" as string]: ".1s" }}>
-              <span className="kicker">Somos de aquí</span>
-              <h2 className="h2" style={{ margin: "18px 0 20px" }}>Una empresa pequeña, <em>con nombre y apellidos.</em></h2>
-              <p className="lead">Mudanzas del Sur nace en Huelva. La llevamos dos socios, Alberto y Cristian, y vamos en persona a cada trabajo con nuestro equipo. Por eso cuidamos tus cosas como si fueran nuestras, y por eso el precio que te damos es el que pagas.</p>
-              <p className="lead" style={{ marginTop: 14 }}>Trabajamos en toda la provincia, Sevilla y el resto de Andalucía, y salimos a cualquier punto de la península.</p>
-              <p className="sign">— Alberto y Cristian</p>
+              <span className="kicker">Nuestra historia</span>
+              <h2 className="h2" style={{ margin: "18px 0 20px" }}>Más que transportar muebles, <em>acompañamos nuevos comienzos.</em></h2>
+              <p className="lead">Detrás de cada camión de Mudanzas del Sur y frente a cada edificio, hay una historia que cambia. Una familia que crece, una pareja que empieza su convivencia o alguien que emprende una nueva aventura en otro lugar.</p>
+              <p className="lead" style={{ marginTop: 14 }}>Nos encanta nuestro trabajo porque no solo transportamos objetos: transportamos vuestros recuerdos y vuestras ilusiones.</p>
+              <p className="sign">— El equipo de Mudanzas del Sur</p>
             </div>
           </div>
         </section>

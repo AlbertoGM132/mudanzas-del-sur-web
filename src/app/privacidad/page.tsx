@@ -5,7 +5,8 @@ import { EMAIL, TEL } from "@/lib/site";
 
 export const metadata = { title: "Privacidad y aviso legal", alternates: { canonical: "/privacidad/" }, robots: { index: true } };
 
-// ⚠️ Alberto: revisa este texto y completa tu NIF antes de publicar la web definitiva.
+// ⚠️ Revisar este texto y completar el NIF antes de publicar la web definitiva.
+// El nombre del titular y el NIF son obligatorios por ley en el aviso legal (LSSI, art. 10).
 export default function Page() {
   return (
     <>
@@ -44,7 +45,7 @@ export default function Page() {
             <p>Puedes pedirnos ver, corregir o borrar tus datos, o retirar tu consentimiento, escribiendo a {EMAIL}. Si crees que no los tratamos bien, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
 
             <h2 id="aviso-legal">Aviso legal</h2>
-            <p>Esta web es de Alberto Gómez Mora (Mudanzas del Sur), Huelva. Los precios que muestra la calculadora son estimaciones orientativas calculadas automáticamente y no constituyen una oferta vinculante: el precio final es el del presupuesto que te confirmamos. Las opiniones marcadas como «Ejemplo» son textos ilustrativos.</p>
+            <p>Esta web es del titular indicado arriba. Los precios que muestra la calculadora son estimaciones orientativas calculadas automáticamente y no constituyen una oferta vinculante: el precio final es el del presupuesto que te confirmamos. Las opiniones marcadas como «Ejemplo» son textos ilustrativos.</p>
             <p>Esta web no usa cookies de publicidad ni de analítica. El mapa y las fuentes tipográficas se cargan desde servicios externos.</p>
           </div>
         </section>
