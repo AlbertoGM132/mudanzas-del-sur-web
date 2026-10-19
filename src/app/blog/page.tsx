@@ -78,7 +78,7 @@ export default function BlogPage() {
       <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-secondary pt-20">
         <div className="absolute inset-0 z-0">
           <AppImage src="/assets/images/services-hero.jpg" alt="Blog de consejos sobre mudanzas" fill priority className="object-cover object-center" sizes="100vw" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(17,24,32,0.88) 0%, rgba(17,24,32,0.65) 55%, rgba(17,24,32,0.25) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(20,26,51,0.88) 0%, rgba(20,26,51,0.65) 55%, rgba(20,26,51,0.25) 100%)" }} />
         </div>
         <div className="container-main relative z-10 py-20 md:py-28">
           <div className="max-w-2xl reveal-item">
@@ -88,7 +88,7 @@ export default function BlogPage() {
               <span className="text-white/80">Blog</span>
             </nav>
             <span className="eyebrow block mb-4 text-accent">Nuestro Blog</span>
-            <h1 className="hero-headline text-white mb-6">Diario de una <span className="italic" style={{ color: "#F5C842" }}>mudanza</span></h1>
+            <h1 className="hero-headline text-white mb-6">Diario de una <span className="italic" style={{ color: "#F2B544" }}>mudanza</span></h1>
             <p className="hero-sub text-white/80 max-w-xl leading-relaxed">Consejos útiles, guías prácticas y todo lo que necesitas saber para que tu mudanza sea un éxito.</p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function BlogPage() {
         <div className="container-main">
           <div className="flex flex-wrap gap-3 mb-12 reveal-item">
             {categories.map((cat) => (
-              <button key={cat} className={`px-5 py-2 rounded-full text-sm font-heading font-700 transition-all border ${cat === "Todos" ? "bg-primary text-white border-primary shadow-sm" : "bg-white text-foreground border-border hover:border-primary hover:text-primary"}`} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}>
+              <button key={cat} className={`px-5 py-2 rounded-full text-sm font-heading font-700 transition-all border ${cat === "Todos" ? "bg-primary text-white border-primary shadow-sm" : "bg-white text-foreground border-border hover:border-primary hover:text-primary"}`} style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
                 {cat}
               </button>
             ))}
@@ -120,7 +120,7 @@ export default function BlogPage() {
                   <span className="text-muted text-xs font-body flex items-center gap-1"><Icon name="CalendarIcon" size={12} />{blogPosts[0].date}</span>
                   <span className="text-muted text-xs font-body flex items-center gap-1"><Icon name="ClockIcon" size={12} />{blogPosts[0].readTime}</span>
                 </div>
-                <h2 className="font-heading font-800 text-2xl md:text-3xl text-foreground leading-tight mb-4 group-hover:text-primary transition-colors" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}>{blogPosts[0].title}</h2>
+                <h2 className="font-heading font-800 text-2xl md:text-3xl text-foreground leading-tight mb-4 group-hover:text-primary transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}>{blogPosts[0].title}</h2>
                 <p className="text-muted font-body text-base leading-relaxed mb-6">{blogPosts[0].excerpt}</p>
                 <Link href={`/blog/${blogPosts[0].slug}`} className="btn-primary text-sm py-3 px-6 self-start">
                   Leer artículo <Icon name="ArrowRightIcon" size={16} />
@@ -131,7 +131,7 @@ export default function BlogPage() {
 
           
           <div className="mb-8">
-            <h2 className="font-heading font-800 text-2xl md:text-3xl text-foreground leading-tight mb-4 group-hover:text-primary transition-colors" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}>Nuestros Artículos</h2>
+            <h2 className="font-heading font-800 text-2xl md:text-3xl text-foreground leading-tight mb-4 group-hover:text-primary transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}>Nuestros Artículos</h2>
             <p className="text-muted font-body text-base leading-relaxed">
               Descubre consejos, tips y noticias sobre mudanzas y traslados en Huelva.
             </p>
@@ -153,9 +153,9 @@ export default function BlogPage() {
                     <span className="text-muted text-xs font-body flex items-center gap-1"><Icon name="CalendarIcon" size={12} />{post.date}</span>
                     <span className="text-muted text-xs font-body flex items-center gap-1"><Icon name="ClockIcon" size={12} />{post.readTime}</span>
                   </div>
-                  <h3 className="font-heading font-800 text-lg text-foreground leading-snug mb-3 group-hover:text-primary transition-colors" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}>{post.title}</h3>
+                  <h3 className="font-heading font-800 text-lg text-foreground leading-snug mb-3 group-hover:text-primary transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}>{post.title}</h3>
                   <p className="text-muted font-body text-sm leading-relaxed mb-5 flex-1">{post.excerpt}</p>
-                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-primary font-heading font-700 text-sm hover:gap-3 transition-all" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}>
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-primary font-heading font-700 text-sm hover:gap-3 transition-all" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
                     Leer más <Icon name="ArrowRightIcon" size={16} />
                   </Link>
                 </div>

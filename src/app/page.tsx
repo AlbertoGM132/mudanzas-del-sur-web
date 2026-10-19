@@ -1,5 +1,7 @@
-import { redirect } from 'next/navigation';
+import Home from "@/components/site/Home";
 
-export default function RootPage() {
-  redirect('/home-page');
+export const metadata = { alternates: { canonical: "/" } };
+
+export default function Page() {
+  return <Home />;
 }

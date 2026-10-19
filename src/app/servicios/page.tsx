@@ -76,7 +76,7 @@ export default function ServiciosPage() {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-secondary pt-20">
         <div className="absolute inset-0 z-0">
           <AppImage src="/assets/images/services-hero.jpg" alt="Camión de mudanzas en carretera" fill priority className="object-cover object-center" sizes="100vw" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(17,24,32,0.85) 0%, rgba(17,24,32,0.6) 50%, rgba(17,24,32,0.2) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(20,26,51,0.85) 0%, rgba(20,26,51,0.6) 50%, rgba(20,26,51,0.2) 100%)" }} />
         </div>
         <div className="container-main relative z-10 py-20 md:py-28">
           <div className="max-w-2xl reveal-item">
@@ -86,7 +86,7 @@ export default function ServiciosPage() {
               <span className="text-white/80">Servicios</span>
             </nav>
             <span className="eyebrow block mb-4 text-accent">Nuestros Servicios</span>
-            <h1 className="hero-headline text-white mb-6">Mudanzas y <span className="italic" style={{ color: "#F5C842" }}>Traslados</span></h1>
+            <h1 className="hero-headline text-white mb-6">Mudanzas y <span className="italic" style={{ color: "#F2B544" }}>Traslados</span></h1>
             <p className="hero-sub text-white/80 max-w-xl leading-relaxed mb-8">
               Ofrecemos servicios de mudanzas y portes en Huelva y toda la península de gran calidad. Ya seas una empresa o un particular, en Mudanzas del Sur nos especializamos en hacer realidad tu cambio.
             </p>
@@ -193,10 +193,10 @@ export default function ServiciosPage() {
       </section>
 
       <section className="section-py bg-foreground overflow-hidden relative">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #E8500A 0%, transparent 50%), radial-gradient(circle at 80% 50%, #F5C842 0%, transparent 50%)" }} />
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #E8590C 0%, transparent 50%), radial-gradient(circle at 80% 50%, #F2B544 0%, transparent 50%)" }} />
         <div className="container-main relative z-10 text-center reveal-item">
           <span className="eyebrow block mb-4 text-accent">¿Listo para empezar?</span>
-          <h2 className="section-title text-white mb-6">Pide tu presupuesto <span className="italic" style={{ color: "#F5C842" }}>sin compromiso</span></h2>
+          <h2 className="section-title text-white mb-6">Pide tu presupuesto <span className="italic" style={{ color: "#F2B544" }}>sin compromiso</span></h2>
           <p className="text-white/70 text-lg font-body max-w-lg mx-auto mb-10 leading-relaxed">Si estás planeando una mudanza, grande o pequeña, no dudes en contactarnos. Te ofreceremos un presupuesto personalizado y sin compromiso.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="tel:+34659715271" className="btn-primary text-base py-4 px-8 shadow-orange">
