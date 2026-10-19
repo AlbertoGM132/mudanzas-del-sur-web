@@ -161,20 +161,28 @@ export default function Home() {
               </div>
               <div className="route-card reveal" aria-hidden="true">
                 <svg className="route" viewBox="0 0 400 300" fill="none">
-                  <path className="route-bg" d="M30 250 C 90 250, 90 150, 160 150 S 230 60, 290 70 S 360 120, 370 50" strokeWidth="10" strokeLinecap="round" strokeDasharray="2 14" />
-                  <path className="route-fg" d="M30 250 C 90 250, 90 150, 160 150 S 230 60, 290 70 S 360 120, 370 50" strokeWidth="4" strokeLinecap="round" />
+                  <path className="route-bg" d="M30 250 C 90 250, 90 160, 160 155 S 225 82, 290 82 L 342 82" strokeWidth="10" strokeLinecap="round" strokeDasharray="2 14" />
+                  <path className="route-fg" d="M30 250 C 90 250, 90 160, 160 155 S 225 82, 290 82 L 342 82" strokeWidth="4" strokeLinecap="round" />
                   <g><circle cx="30" cy="250" r="9" fill="#f3eadb" /><circle cx="30" cy="250" r="4" fill="#141a33" /></g>
-                  <g><path d="M370 26c-9 0-15 7-15 14 0 10 15 24 15 24s15-14 15-24c0-7-6-14-15-14z" fill="#e8590c" /><circle cx="370" cy="40" r="5" fill="#141a33" /></g>
+                  <g transform="translate(0 18)"><path d="M370 26c-9 0-15 7-15 14 0 10 15 24 15 24s15-14 15-24c0-7-6-14-15-14z" fill="#e8590c" /><circle cx="370" cy="40" r="5" fill="#141a33" /></g>
                   <g className="route-truck" transform="translate(30 250)">
-                    <g transform="translate(-16 -11)">
-                      <rect x="0" y="2" width="21" height="15" rx="2" fill="#f3eadb" />
-                      <path d="M21 6h6l5 5v6H21z" fill="#e8590c" />
-                      <circle cx="7" cy="19" r="3" fill="#141a33" stroke="#f3eadb" strokeWidth="1.5" />
-                      <circle cx="26" cy="19" r="3" fill="#141a33" stroke="#f3eadb" strokeWidth="1.5" />
+                    {/* Camión de Mudanzas del Sur (vista lateral) con el logo; las ruedas apoyan en la ruta */}
+                    <g transform="translate(-41 -44) scale(1.1)">
+                      <ellipse cx="38" cy="40" rx="35" ry="2.6" fill="#000" opacity=".28" />
+                      <rect x="0" y="0" width="50" height="31" rx="2.5" fill="#fffdf8" stroke="#d8d0c2" strokeWidth=".6" />
+                      <rect x="0" y="27" width="50" height="4" fill="#e8590c" />
+                      <image href="/assets/img/logo.webp" x="3.5" y="3.5" width="43" height="21" preserveAspectRatio="xMidYMid meet" />
+                      <path d="M51 9h13l8.5 9.5V31H51z" fill="#fffdf8" stroke="#d8d0c2" strokeWidth=".6" />
+                      <path d="M54 11.5h8.6l6 6.8H54z" fill="#1d2547" />
+                      <rect x="54" y="21" width="5" height="1.2" rx=".6" fill="#b9b2a5" />
+                      <rect x="0" y="31" width="74" height="3" rx="1" fill="#2a3152" />
+                      <rect x="71.5" y="24" width="2.5" height="3" rx=".8" fill="#f2b544" />
+                      <g className="rueda"><circle cx="13" cy="35" r="5" fill="#141a33" stroke="#f3eadb" strokeWidth="1.2" /><path d="M13 31.6v6.8M9.6 35h6.8" stroke="#9aa0b4" strokeWidth=".9" /></g>
+                      <g className="rueda"><circle cx="60" cy="35" r="5" fill="#141a33" stroke="#f3eadb" strokeWidth="1.2" /><path d="M60 31.6v6.8M56.6 35h6.8" stroke="#9aa0b4" strokeWidth=".9" /></g>
                     </g>
                   </g>
                   <text x="22" y="282" fill="#f3eadb" opacity=".7" fontSize="12" fontFamily="Inter">Tu casa</text>
-                  <text x="300" y="98" fill="#f3eadb" opacity=".7" fontSize="12" fontFamily="Inter">Tu casa nueva</text>
+                  <text x="385" y="30" fill="#f3eadb" opacity=".7" fontSize="12" fontFamily="Inter" textAnchor="end">Tu casa nueva</text>
                 </svg>
                 <div className="route-meta">
                   <span>Progreso<b><span data-km>0</span> %</b></span>
