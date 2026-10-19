@@ -60,9 +60,15 @@ export default function Effects() {
         const r = sec.getBoundingClientRect(), vh = window.innerHeight;
         const p = Math.max(0, Math.min(1, (vh * 0.6 - r.top) / (r.height - vh * 0.35)));
         path.style.strokeDashoffset = `${len * (1 - p)}`;
-        const pt = path.getPointAtLength(len * p), pt2 = path.getPointAtLength(Math.min(len, len * p + 1));
-        const ang = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI;
+        const pc = Math.min(p, (len - 34) / len);   // el camión aparca justo antes de la casa nueva
+        const pt = path.getPointAtLength(len * pc), pt2 = path.getPointAtLength(Math.min(len, len * pc + 1));
+        // Inclinación suave (un camión no sube en vertical) y ruedas que giran al avanzar
+        const ang = Math.max(-22, Math.min(22, Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI));
         truck.setAttribute("transform", `translate(${pt.x} ${pt.y}) rotate(${ang})`);
+        truck.querySelectorAll<SVGGElement>(".rueda").forEach((w, i) => {
+          const cx = i === 0 ? 13 : 60;
+          w.setAttribute("transform", `rotate(${p * 1440} ${cx} 35)`);
+        });
         const activo = Math.min(steps.length - 1, Math.floor(p * steps.length));
         steps.forEach((s, i) => { s.classList.toggle("active", i === activo); s.classList.toggle("done", i < activo); });
         if (kmEl) kmEl.textContent = String(Math.round(p * 100));
