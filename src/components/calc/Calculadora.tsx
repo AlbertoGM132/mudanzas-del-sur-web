@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { api, TEL, wa } from "@/lib/site";
+import { atribucion, ev } from "@/lib/analitica";
 import { CASAS, CATS, ESPECIALES, Item, PISOS, RAPIDOS, comprimir, metros, uid, volumen } from "./datos";
 import Buscador, { Lugar } from "./Buscador";
 import { IArrow, ICamera, ISpark, IWhatsApp } from "@/components/site/Icons";
@@ -67,6 +68,10 @@ export default function Calculadora() {
   const [estudio, setEstudio] = useState<Estudio | null>(null);
   const top = useRef<HTMLDivElement>(null);
 
+  // Analítica: en qué paso está cada visita (para ver dónde se atasca la gente)
+  useEffect(() => { if (paso < PASOS.length) ev("calc_paso", { paso: paso + 1, nombre: PASOS[paso] }); }, [paso]);
+  useEffect(() => { if (err) ev("calc_error", { paso: paso + 1, motivo: err.slice(0, 60) }); }, [err]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const m3 = useMemo(() => volumen(items, tipo || "casa", casa), [items, tipo, casa]);
   const irA = (n: number) => {
     setErr(""); setPaso(n);
@@ -121,6 +126,7 @@ export default function Calculadora() {
     setIa("analizando"); setIaMsg(""); setIaTick(0);
     const r = await api<{ items?: { nombre: string; categoria: string; cantidad: number }[]; cajas?: number | null; especiales?: string[]; fallback?: boolean }>(
       "fotos", { fotos: fotos.map((f) => f.small), tipo });
+    ev("calc_fotos", { n: fotos.length, muebles: r.items?.length || 0, ok: !!(r.ok && r.items) });
     if (!r.ok || !r.items) {
       setIa("error");
       setIaMsg(r.error || "No hemos podido analizar las fotos. Añade tus muebles a mano aquí abajo.");
@@ -181,10 +187,13 @@ export default function Calculadora() {
       cuando: cuando === "fecha" ? "" : cuando, fecha: cuando === "fecha" ? fecha : "",
       comentario: [comentario, cajasIa ? `La IA vio ${cajasIa} cajas ya hechas en las fotos.` : ""].filter(Boolean).join("\n"),
       fotos: fotos.map((f) => f.full),
+      atribucion: atribucion(),
     });
     setEnviando(false);
     if (!r.ok || !r.estudio) { setErr(r.error || "No se ha podido calcular. Escríbenos por WhatsApp."); return; }
     setEstudio(r.estudio);
+    ev("calc_resultado", { min: r.estudio.min, max: r.estudio.max, m3: r.estudio.m3, sin_precio: r.estudio.sin_precio });
+    ev("lead", { tipo: "calculadora" });
     irA(6);
   }
 

@@ -3,6 +3,7 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { api } from "@/lib/site";
+import { atribucion, ev } from "@/lib/analitica";
 import { ISend } from "./Icons";
 
 const SERV = [
@@ -18,15 +19,16 @@ export default function ContactForm() {
   const [acepto, setAcepto] = useState(false);
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
+  const empezado = useRef(false);
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setF({ ...f, [k]: e.target.value });
 
   async function enviar(e: React.FormEvent) {
     e.preventDefault();
     if (!acepto) { setErr("Marca la casilla de privacidad para poder contestarte."); return; }
     setBusy(true); setErr("");
-    const r = await api("contacto", { ...f, servicios: serv, t: Date.now() - t0.current });
+    const r = await api("contacto", { ...f, servicios: serv, t: Date.now() - t0.current, atribucion: atribucion() });
     setBusy(false);
-    if (r.ok) setOk(true); else setErr(r.error || "No se ha podido enviar.");
+    if (r.ok) { setOk(true); ev("lead", { tipo: "contacto" }); } else setErr(r.error || "No se ha podido enviar.");
   }
 
   if (ok) return (
@@ -38,7 +40,8 @@ export default function ContactForm() {
   );
 
   return (
-    <form className="card form-grid" onSubmit={enviar} noValidate>
+    <form className="card form-grid" onSubmit={enviar} noValidate
+      onFocus={() => { if (!empezado.current) { empezado.current = true; ev("form_inicio"); } }}>
       <div>
         <h3 className="h3">Cuéntanos tu mudanza</h3>
         <p className="muted small" style={{ marginTop: 6 }}>Te contestamos por WhatsApp. Gratis y sin compromiso.</p>

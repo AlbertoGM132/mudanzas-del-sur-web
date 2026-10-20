@@ -4,6 +4,7 @@ import "../styles/tailwind.css";
 import "../styles/site.css";
 import ChatWidget from "@/components/site/ChatWidget";
 import Effects from "@/components/site/Effects";
+import Analitica from "@/components/site/Analitica";
 import { EMAIL, INSTAGRAM, SITE_URL } from "@/lib/site";
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#141a33" };
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <ChatWidget />
         <Effects />
+        <Analitica />
       </body>
     </html>
   );
