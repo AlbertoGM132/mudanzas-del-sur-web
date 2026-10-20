@@ -94,7 +94,7 @@ export default function ChatWidget() {
             <a href={wa()} className="btn btn-wa" target="_blank" rel="noopener noreferrer"><IWhatsApp />WhatsApp</a>
           </div>
           <form className="chat-form" onSubmit={(e) => { e.preventDefault(); enviar(txt); }}>
-            <input ref={input} value={txt} onChange={(e) => setTxt(e.target.value)} maxLength={600}
+            <input ref={input} name="pregunta" autoComplete="off" value={txt} onChange={(e) => setTxt(e.target.value)} maxLength={600}
               placeholder="Escribe tu pregunta…" aria-label="Tu pregunta" />
             <button type="submit" aria-label="Enviar" disabled={busy}><ISend /></button>
           </form>

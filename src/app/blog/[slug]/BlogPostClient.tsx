@@ -51,7 +51,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-background" ref={sectionRef}>
+    <main id="main" className="min-h-screen bg-background" ref={sectionRef}>
       <Header />
 
       {/* HERO */}
@@ -130,7 +130,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                   <div key={i} className="mb-10 reveal-item">
                     <h2
                       className="font-heading font-800 text-xl md:text-2xl text-foreground mb-3"
-                      style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
+                      style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 800 }}
                     >
                       {block.title}
                     </h2>
@@ -160,7 +160,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                       <Icon name="LightBulbIcon" size={20} className="text-primary" variant="solid" />
                       <span
                         className="font-heading font-800 text-base text-primary"
-                        style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
+                        style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 800 }}
                       >
                         {block.title}
                       </span>
@@ -177,7 +177,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
             <div className="reveal-item mt-12 rounded-3xl bg-secondary p-8 md:p-10 text-center">
               <h3
                 className="font-heading font-800 text-2xl text-white mb-3"
-                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
+                style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 800 }}
               >
                 ¿Planeas una mudanza en Huelva?
               </h3>
@@ -205,7 +205,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
           <div className="mb-8 reveal-item">
             <h2
               className="font-heading font-800 text-2xl md:text-3xl text-foreground"
-              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
+              style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 800 }}
             >
               Otros artículos del blog
             </h2>
@@ -214,7 +214,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
             {relatedPosts.map((related, idx) => (
               <article
                 key={related.id}
-                className="reveal-item group bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-400 service-card flex flex-col"
+                className="reveal-item group bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-[transform,box-shadow,background-color,color,border-color,opacity] duration-400 service-card flex flex-col"
                 style={{ transitionDelay: `${idx * 80}ms` }}
               >
                 <div className="relative h-48 overflow-hidden">
@@ -244,14 +244,14 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                   </div>
                   <h3
                     className="font-heading font-800 text-base text-foreground leading-snug mb-3 group-hover:text-primary transition-colors flex-1"
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
+                    style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 800 }}
                   >
                     {related.title}
                   </h3>
                   <Link
                     href={`/blog/${related.slug}`}
-                    className="inline-flex items-center gap-2 text-primary font-heading font-700 text-sm hover:gap-3 transition-all mt-2"
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+                    className="inline-flex items-center gap-2 text-primary font-heading font-700 text-sm hover:gap-3 transition-[transform,box-shadow,background-color,color,border-color,opacity] mt-2"
+                    style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 700 }}
                   >
                     Leer más <Icon name="ArrowRightIcon" size={16} />
                   </Link>

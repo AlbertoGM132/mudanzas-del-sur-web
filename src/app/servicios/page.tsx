@@ -70,7 +70,7 @@ export default function ServiciosPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background" ref={sectionRef}>
+    <main id="main" className="min-h-screen bg-background" ref={sectionRef}>
       <Header />
 
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-secondary pt-20">
@@ -85,8 +85,7 @@ export default function ServiciosPage() {
               <Icon name="ChevronRightIcon" size={14} className="text-white/30" />
               <span className="text-white/80">Servicios</span>
             </nav>
-            <span className="eyebrow block mb-4 text-accent">Nuestros Servicios</span>
-            <h1 className="hero-headline text-white mb-6">Mudanzas y <span className="italic" style={{ color: "#F2B544" }}>Traslados</span></h1>
+            <h1 className="hero-headline text-white mb-6">Mudanzas y <span className="font-script" style={{ color: "#D6E02E", fontWeight: 400, letterSpacing: 0 }}>Traslados</span></h1>
             <p className="hero-sub text-white/80 max-w-xl leading-relaxed mb-8">
               Ofrecemos servicios de mudanzas y portes en Huelva y toda la península de gran calidad. Ya seas una empresa o un particular, en Mudanzas del Sur nos especializamos en hacer realidad tu cambio.
             </p>
@@ -106,7 +105,7 @@ export default function ServiciosPage() {
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center reveal-item">
             <span className="eyebrow block mb-4">¿Por qué elegirnos?</span>
-            <h2 className="section-title text-foreground mb-6">Profesionales en <span className="text-gradient-orange italic">cada detalle</span></h2>
+            <h2 className="section-title text-foreground mb-6">Profesionales en <span className="text-gradient-orange">cada detalle</span></h2>
             <p className="text-muted text-lg leading-relaxed font-body mb-4">Nuestro equipo se ocupa personalmente de clasificar, embalar con máximo cuidado y posteriormente desembalar y montar todos tus enseres y mobiliario.</p>
             <p className="text-muted text-lg leading-relaxed font-body">Con años de experiencia en el sector, ofrecemos un servicio confiable y de alta calidad, adaptándonos siempre a lo que cada cliente necesita.</p>
           </div>
@@ -128,7 +127,7 @@ export default function ServiciosPage() {
         <div className="container-main">
           <div className="text-center mb-14 reveal-item">
             <span className="eyebrow block mb-3">Lo que ofrecemos</span>
-            <h2 className="section-title text-foreground">Mudanzas <span className="text-gradient-orange italic">Profesionales</span></h2>
+            <h2 className="section-title text-foreground">Mudanzas <span className="text-gradient-orange">Profesionales</span></h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {services.map((service, idx) => (
@@ -181,7 +180,7 @@ export default function ServiciosPage() {
             </div>
             <div className="reveal-item order-1 md:order-2">
               <span className="eyebrow block mb-4">Nuestra Historia</span>
-              <h2 className="section-title text-foreground mb-6">Más que transportar muebles, <span className="text-gradient-orange italic">acompañamos nuevos comienzos</span></h2>
+              <h2 className="section-title text-foreground mb-6">Más que transportar muebles, <span className="text-gradient-orange">acompañamos nuevos comienzos</span></h2>
               <p className="text-muted text-base leading-relaxed font-body mb-4">Detrás de cada camión de Mudanzas del Sur y frente a cada edificio, hay una historia que cambia. Una familia que crece, una pareja que empieza su convivencia o alguien que emprende una nueva aventura en otro lugar.</p>
               <p className="text-muted text-base leading-relaxed font-body mb-8">Nos encanta nuestro trabajo porque no solo transportamos objetos; transportamos vuestros recuerdos y vuestras ilusiones.</p>
               <a href="tel:+34659715271" className="btn-primary text-base py-4 px-7">
@@ -193,10 +192,9 @@ export default function ServiciosPage() {
       </section>
 
       <section className="section-py bg-foreground overflow-hidden relative">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #E8590C 0%, transparent 50%), radial-gradient(circle at 80% 50%, #F2B544 0%, transparent 50%)" }} />
-        <div className="container-main relative z-10 text-center reveal-item">
+                <div className="container-main relative z-10 text-center reveal-item">
           <span className="eyebrow block mb-4 text-accent">¿Listo para empezar?</span>
-          <h2 className="section-title text-white mb-6">Pide tu presupuesto <span className="italic" style={{ color: "#F2B544" }}>sin compromiso</span></h2>
+          <h2 className="section-title text-white mb-6">Pide tu presupuesto <span className="font-script" style={{ color: "#D6E02E", fontWeight: 400, letterSpacing: 0 }}>sin compromiso</span></h2>
           <p className="text-white/70 text-lg font-body max-w-lg mx-auto mb-10 leading-relaxed">Si estás planeando una mudanza, grande o pequeña, no dudes en contactarnos. Te ofreceremos un presupuesto personalizado y sin compromiso.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="tel:+34659715271" className="btn-primary text-base py-4 px-8 shadow-orange">

@@ -16,10 +16,9 @@ export default function ContactoPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main">
         <section className="page-hero">
           <div className="wrap">
-            <span className="kicker">Contacto</span>
             <h1 className="display h1">Cuéntanos <em>tu mudanza.</em></h1>
             <p className="lead">Lo más rápido: mándanos fotos por WhatsApp o usa la calculadora con IA y tendrás un precio orientativo al momento.</p>
             <div className="hero-actions" style={{ animation: "none" }}>
