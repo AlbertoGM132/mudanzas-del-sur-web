@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { api, TEL, wa } from "@/lib/site";
+import { contextoChat, ev } from "@/lib/analitica";
 import { ISend, ISur, IWhatsApp } from "./Icons";
 
 type Msg = { role: "user" | "model"; text: string };
@@ -38,6 +39,7 @@ export default function ChatWidget() {
   useEffect(() => { body.current?.scrollTo({ top: body.current.scrollHeight, behavior: "smooth" }); }, [msgs, busy]);
   useEffect(() => {
     if (!open) return;
+    ev("chat_abierto");
     const t = setTimeout(() => input.current?.focus(), 250);
     const esc = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", esc);
@@ -56,7 +58,8 @@ export default function ChatWidget() {
     setMsgs((m) => [...m, { role: "user", text: q }]);
     setTxt("");
     setBusy(true);
-    const r = await api<{ reply?: string }>("chat", { message: q, history: historia });
+    ev("chat_mensaje");
+    const r = await api<{ reply?: string }>("chat", { message: q, history: historia, ...contextoChat() });
     setBusy(false);
     setMsgs((m) => [...m, { role: "model", text: r.reply || r.error || `Ahora mismo no puedo responder. Escríbenos por WhatsApp al ${TEL}.` }]);
   }
