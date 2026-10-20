@@ -46,7 +46,7 @@ export default function Buscador({ id, valor, placeholder, onElegir }: {
 
   return (
     <div className="buscador">
-      <input id={id} className="input" value={q} placeholder={placeholder} autoComplete="off"
+      <input id={id} name={id} className="input" value={q} placeholder={placeholder} autoComplete="off"
         onChange={(e) => { setQ(e.target.value); setAbierto(true); }}
         onFocus={() => res.length && setAbierto(true)}
         onBlur={() => setTimeout(() => setAbierto(false), 180)}

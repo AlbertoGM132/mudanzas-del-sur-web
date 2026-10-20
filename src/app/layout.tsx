@@ -6,7 +6,7 @@ import ChatWidget from "@/components/site/ChatWidget";
 import Effects from "@/components/site/Effects";
 import { EMAIL, INSTAGRAM, SITE_URL } from "@/lib/site";
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#f6efe3" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#141a33" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website", locale: "es_ES", siteName: "Mudanzas del Sur", url: SITE_URL,
     title: "Mudanzas del Sur · Cambia de casa, no de humor",
     description: "Mudanzas y portes en Huelva y Andalucía. Calcula tu mudanza con IA en 2 minutos.",
-    images: [{ url: "/assets/img/hero-1200.webp", width: 1200, height: 678 }],
+    images: [{ url: "/assets/img/og-camiseta-1200.webp", width: 1200, height: 670 }],
   },
 };
 
@@ -27,7 +27,7 @@ const negocio = {
   "@type": "MovingCompany",
   name: "Mudanzas del Sur",
   url: SITE_URL,
-  image: `${SITE_URL}/assets/img/hero-1200.webp`,
+  image: `${SITE_URL}/assets/img/og-camiseta-1200.webp`,
   logo: `${SITE_URL}/assets/img/logo.webp`,
   telephone: "+34659715271",
   email: EMAIL,
@@ -47,13 +47,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Inter:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Kaushan+Script&display=swap"
         />
         <link rel="preconnect" href="https://europe-west1-smartsonubalogictis.cloudfunctions.net" crossOrigin="" />
         <script dangerouslySetInnerHTML={{ __html: ARRANQUE }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(negocio) }} />
       </head>
       <body>
+        <a href="#main" className="skip-link">Saltar al contenido</a>
         {children}
         <ChatWidget />
         <Effects />

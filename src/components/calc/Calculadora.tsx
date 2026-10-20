@@ -283,7 +283,7 @@ export default function Calculadora() {
               <div className={`thumbs${ia === "analizando" ? " scanning" : ""}`}>
                 {fotos.map((f) => (
                   <div key={f.id} className="thumb">
-                    <img src={f.small} alt="Foto subida" />
+                    <img src={f.small} alt="Foto subida" width={160} height={160} />
                     {ia !== "analizando" && <button type="button" aria-label="Quitar foto" onClick={() => setFotos((x) => x.filter((y) => y.id !== f.id))}>×</button>}
                   </div>
                 ))}
@@ -334,11 +334,11 @@ export default function Calculadora() {
                 <div key={k} className="lado">
                   <div className="field">
                     <label htmlFor={`dir-${k}`}><span className={`badge-ab ${k}`}>{k === "origen" ? "A" : "B"}</span> {t}</label>
-                    <Buscador id={`dir-${k}`} valor={l.lugar} placeholder="Calle y número, población" onElegir={(lg) => set({ ...l, lugar: lg, camion: null, puerta: false })} />
+                    <Buscador id={`dir-${k}`} valor={l.lugar} placeholder="Ej.: Calle Concepción 12, Huelva…" onElegir={(lg) => set({ ...l, lugar: lg, camion: null, puerta: false })} />
                   </div>
                   <div className="mini-grid">
                     <div className="field"><label htmlFor={`piso-${k}`}>Piso</label>
-                      <select id={`piso-${k}`} className="select" value={l.piso} onChange={(e) => set({ ...l, piso: e.target.value })}>
+                      <select id={`piso-${k}`} name={`piso-${k}`} className="select" value={l.piso} onChange={(e) => set({ ...l, piso: e.target.value })}>
                         {PISOS.map((p) => (<option key={p.k} value={p.k}>{p.t}</option>))}
                       </select></div>
                     <div className="field"><span className="lbl">Ascensor</span>
@@ -405,10 +405,10 @@ export default function Calculadora() {
               <div className="chips">{[["pronto", "Lo antes posible"], ["fecha", "Tengo fecha"], ["nosabe", "Aún no lo sé"]].map(([k, t]) => (
                 <button type="button" key={k} className={`chip${cuando === k ? " chip-accent" : ""}`} aria-pressed={cuando === k} onClick={() => setCuando(k as typeof cuando)}>{t}</button>
               ))}</div>
-              {cuando === "fecha" && <input type="date" className="input" style={{ maxWidth: 260, marginTop: 8 }} value={fecha} min={new Date().toISOString().slice(0, 10)} onChange={(e) => setFecha(e.target.value)} />}
+              {cuando === "fecha" && <input type="date" name="fecha" className="input" style={{ maxWidth: 260, marginTop: 8 }} value={fecha} min={new Date().toISOString().slice(0, 10)} onChange={(e) => setFecha(e.target.value)} />}
             </div>
             <div className="field"><label htmlFor="cm">¿Algo más que debamos saber? <span className="muted">(opcional)</span></label>
-              <textarea id="cm" className="textarea" value={comentario} onChange={(e) => setComentario(e.target.value)} maxLength={1200} placeholder="Calle estrecha, ascensor pequeño, hay que dejar algo en un trastero…" /></div>
+              <textarea id="cm" name="comentario" className="textarea" value={comentario} onChange={(e) => setComentario(e.target.value)} maxLength={1200} placeholder="Calle estrecha, ascensor pequeño, hay que dejar algo en un trastero…" /></div>
           </section>
         )}
 
@@ -419,12 +419,12 @@ export default function Calculadora() {
               <h2 className="h3">¿A quién le mandamos el estudio?</h2>
               <p className="muted small">Te enseñamos el precio orientativo al momento y te lo confirmamos por WhatsApp.</p>
             </div>
-            <div className="field"><label htmlFor="n">Nombre</label><input id="n" className="input" autoComplete="name" value={c.nombre} onChange={(e) => setC({ ...c, nombre: e.target.value })} /></div>
+            <div className="field"><label htmlFor="n">Nombre</label><input id="n" name="nombre" className="input" autoComplete="name" value={c.nombre} onChange={(e) => setC({ ...c, nombre: e.target.value })} /></div>
             <div className="form-grid two">
-              <div className="field"><label htmlFor="t">Teléfono / WhatsApp</label><input id="t" className="input" inputMode="tel" autoComplete="tel" placeholder="6XX XXX XXX" value={c.telefono} onChange={(e) => setC({ ...c, telefono: e.target.value })} /></div>
-              <div className="field"><label htmlFor="e">Email</label><input id="e" className="input" type="email" autoComplete="email" value={c.email} onChange={(e) => setC({ ...c, email: e.target.value })} /></div>
+              <div className="field"><label htmlFor="t">Teléfono / WhatsApp</label><input id="t" name="telefono" type="tel" className="input" inputMode="tel" autoComplete="tel" placeholder="Ej.: 612 345 678…" value={c.telefono} onChange={(e) => setC({ ...c, telefono: e.target.value })} /></div>
+              <div className="field"><label htmlFor="e">Email</label><input id="e" name="email" className="input" type="email" autoComplete="email" spellCheck={false} placeholder="tu@email.com…" value={c.email} onChange={(e) => setC({ ...c, email: e.target.value })} /></div>
             </div>
-            <input className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" value={c.web} onChange={(e) => setC({ ...c, web: e.target.value })} />
+            <input className="hp" name="web" tabIndex={-1} autoComplete="off" aria-hidden="true" value={c.web} onChange={(e) => setC({ ...c, web: e.target.value })} />
             <label className="check"><input type="checkbox" checked={acepto} onChange={(e) => setAcepto(e.target.checked)} />
               <span>Acepto que Mudanzas del Sur guarde estos datos y mis fotos para prepararme el presupuesto y contactarme. Las fotos las analiza la IA de Google solo para hacer la lista de muebles. <Link href="/privacidad/" target="_blank">Privacidad</Link>.</span></label>
           </section>

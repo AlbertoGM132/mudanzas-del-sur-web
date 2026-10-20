@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main">
         <section className="page-hero">
           <div className="wrap">
             <span className="kicker">Legal</span>

@@ -44,12 +44,12 @@ export default function ContactForm() {
         <p className="muted small" style={{ marginTop: 6 }}>Te contestamos por WhatsApp. Gratis y sin compromiso.</p>
       </div>
       <div className="form-grid two">
-        <div className="field"><label htmlFor="c-nombre">Nombre</label><input id="c-nombre" className="input" required value={f.nombre} onChange={set("nombre")} autoComplete="name" /></div>
-        <div className="field"><label htmlFor="c-tel">Teléfono / WhatsApp</label><input id="c-tel" className="input" required inputMode="tel" value={f.telefono} onChange={set("telefono")} autoComplete="tel" placeholder="6XX XXX XXX" /></div>
+        <div className="field"><label htmlFor="c-nombre">Nombre</label><input id="c-nombre" name="nombre" className="input" required value={f.nombre} onChange={set("nombre")} autoComplete="name" /></div>
+        <div className="field"><label htmlFor="c-tel">Teléfono / WhatsApp</label><input id="c-tel" name="telefono" type="tel" className="input" required inputMode="tel" value={f.telefono} onChange={set("telefono")} autoComplete="tel" placeholder="Ej.: 612 345 678…" /></div>
       </div>
       <div className="form-grid two">
-        <div className="field"><label htmlFor="c-email">Email <span className="muted">(opcional)</span></label><input id="c-email" className="input" type="email" value={f.email} onChange={set("email")} autoComplete="email" /></div>
-        <div className="field"><label htmlFor="c-ruta">De dónde a dónde</label><input id="c-ruta" className="input" value={f.ruta} onChange={set("ruta")} placeholder="Ej.: Huelva → Aljaraque" /></div>
+        <div className="field"><label htmlFor="c-email">Email <span className="muted">(opcional)</span></label><input id="c-email" name="email" className="input" type="email" value={f.email} onChange={set("email")} autoComplete="email" spellCheck={false} placeholder="tu@email.com…" /></div>
+        <div className="field"><label htmlFor="c-ruta">De dónde a dónde</label><input id="c-ruta" name="ruta" className="input" autoComplete="off" value={f.ruta} onChange={set("ruta")} placeholder="Ej.: Huelva → Aljaraque…" /></div>
       </div>
       <div className="field">
         <span className="lbl">¿Qué necesitas?</span>
@@ -63,7 +63,7 @@ export default function ContactForm() {
           })}
         </div>
       </div>
-      <div className="field"><label htmlFor="c-msg">Mensaje</label><textarea id="c-msg" className="textarea" value={f.mensaje} onChange={set("mensaje")} placeholder="Piso, ascensor, muebles grandes, fecha que te viene bien…" /></div>
+      <div className="field"><label htmlFor="c-msg">Mensaje</label><textarea id="c-msg" name="mensaje" className="textarea" value={f.mensaje} onChange={set("mensaje")} placeholder="Piso, ascensor, muebles grandes, fecha que te viene bien…" /></div>
       <input className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" value={f.web} onChange={set("web")} name="web" />
       <label className="check"><input type="checkbox" checked={acepto} onChange={(e) => setAcepto(e.target.checked)} />
         <span>Acepto que Mudanzas del Sur use estos datos para contestarme y preparar mi presupuesto (<Link href="/privacidad/">privacidad</Link>).</span></label>

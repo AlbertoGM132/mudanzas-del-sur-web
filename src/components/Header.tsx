@@ -29,7 +29,7 @@ export default function Header() {
     <header className={`site-header${scrolled || open ? " scrolled" : ""}`}>
       <div className="wrap bar">
         <Link href="/" className="brand" aria-label="Mudanzas del Sur, inicio">
-          <img src="/assets/img/logo.webp" alt="Mudanzas del Sur" width={92} height={44} />
+          <img src="/assets/img/logo-claro.webp" alt="Mudanzas del Sur" width={96} height={46} />
         </Link>
         <nav className="nav" aria-label="Principal">
           {LINKS.map((l) => (
@@ -37,13 +37,13 @@ export default function Header() {
           ))}
           <a href={TEL_HREF}>{TEL}</a>
         </nav>
-        <Link href="/calculadora/" className="btn btn-accent header-cta">Calcula tu mudanza</Link>
+        <Link href="/calculadora/" className="btn btn-lime header-cta">Calcula tu mudanza</Link>
         <button className="burger" aria-label="Abrir menú" aria-expanded={open} onClick={() => setOpen(!open)}><span /></button>
       </div>
       <div className={`mobile-nav${open ? " open" : ""}`} aria-hidden={!open}>
         {LINKS.map((l) => (<Link key={l.href} href={l.href} tabIndex={open ? 0 : -1}>{l.label}</Link>))}
         <a href={TEL_HREF} tabIndex={open ? 0 : -1}>Llamar · {TEL}</a>
-        <Link href="/calculadora/" className="btn btn-accent" tabIndex={open ? 0 : -1}>Calcula tu mudanza con IA</Link>
+        <Link href="/calculadora/" className="btn btn-lime" tabIndex={open ? 0 : -1}>Calcula tu mudanza con IA</Link>
       </div>
     </header>
   );

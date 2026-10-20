@@ -70,7 +70,7 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background" ref={sectionRef}>
+    <main id="main" className="min-h-screen bg-background" ref={sectionRef}>
       <Header />
 
 
@@ -87,8 +87,7 @@ export default function BlogPage() {
               <Icon name="ChevronRightIcon" size={14} className="text-white/30" />
               <span className="text-white/80">Blog</span>
             </nav>
-            <span className="eyebrow block mb-4 text-accent">Nuestro Blog</span>
-            <h1 className="hero-headline text-white mb-6">Diario de una <span className="italic" style={{ color: "#F2B544" }}>mudanza</span></h1>
+            <h1 className="hero-headline text-white mb-6">Diario de una <span className="font-script" style={{ color: "#D6E02E", fontWeight: 400, letterSpacing: 0 }}>mudanza</span></h1>
             <p className="hero-sub text-white/80 max-w-xl leading-relaxed">Consejos útiles, guías prácticas y todo lo que necesitas saber para que tu mudanza sea un éxito.</p>
           </div>
         </div>
@@ -98,7 +97,7 @@ export default function BlogPage() {
         <div className="container-main">
           <div className="flex flex-wrap gap-3 mb-12 reveal-item">
             {categories.map((cat) => (
-              <button key={cat} className={`px-5 py-2 rounded-full text-sm font-heading font-700 transition-all border ${cat === "Todos" ? "bg-primary text-white border-primary shadow-sm" : "bg-white text-foreground border-border hover:border-primary hover:text-primary"}`} style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
+              <button key={cat} className={`px-5 py-2 rounded-full text-sm font-heading font-700 transition-[transform,box-shadow,background-color,color,border-color,opacity] border ${cat === "Todos" ? "bg-primary text-white border-primary shadow-sm" : "bg-white text-foreground border-border hover:border-primary hover:text-primary"}`} style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 700 }}>
                 {cat}
               </button>
             ))}
@@ -106,7 +105,7 @@ export default function BlogPage() {
 
           {/* ARTICULO DESTACADO */}
           <div className="mb-10 reveal-item">
-            <div className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-400 bg-white service-card">
+            <div className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-[transform,box-shadow,background-color,color,border-color,opacity] duration-400 bg-white service-card">
               <div className="relative h-64 lg:h-auto overflow-hidden">
                 <AppImage src={blogPosts[0].image} alt={blogPosts[0].alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute top-4 left-4">
@@ -120,7 +119,7 @@ export default function BlogPage() {
                   <span className="text-muted text-xs font-body flex items-center gap-1"><Icon name="CalendarIcon" size={12} />{blogPosts[0].date}</span>
                   <span className="text-muted text-xs font-body flex items-center gap-1"><Icon name="ClockIcon" size={12} />{blogPosts[0].readTime}</span>
                 </div>
-                <h2 className="font-heading font-800 text-2xl md:text-3xl text-foreground leading-tight mb-4 group-hover:text-primary transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}>{blogPosts[0].title}</h2>
+                <h2 className="font-heading font-800 text-2xl md:text-3xl text-foreground leading-tight mb-4 group-hover:text-primary transition-colors" style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 800 }}>{blogPosts[0].title}</h2>
                 <p className="text-muted font-body text-base leading-relaxed mb-6">{blogPosts[0].excerpt}</p>
                 <Link href={`/blog/${blogPosts[0].slug}`} className="btn-primary text-sm py-3 px-6 self-start">
                   Leer artículo <Icon name="ArrowRightIcon" size={16} />
@@ -131,7 +130,7 @@ export default function BlogPage() {
 
           
           <div className="mb-8">
-            <h2 className="font-heading font-800 text-2xl md:text-3xl text-foreground leading-tight mb-4 group-hover:text-primary transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}>Nuestros Artículos</h2>
+            <h2 className="font-heading font-800 text-2xl md:text-3xl text-foreground leading-tight mb-4 group-hover:text-primary transition-colors" style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 800 }}>Nuestros Artículos</h2>
             <p className="text-muted font-body text-base leading-relaxed">
               Descubre consejos, tips y noticias sobre mudanzas y traslados en Huelva.
             </p>
@@ -141,7 +140,7 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {blogPosts.slice(1).map((post, idx) => (
 
-              <article key={post.id} className="reveal-item group bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-400 service-card flex flex-col" style={{ transitionDelay: `${idx * 80}ms` }}>
+              <article key={post.id} className="reveal-item group bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-[transform,box-shadow,background-color,color,border-color,opacity] duration-400 service-card flex flex-col" style={{ transitionDelay: `${idx * 80}ms` }}>
                 <div className="relative h-52 overflow-hidden">
                   <AppImage src={post.image} alt={post.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
                   <div className="absolute top-3 left-3">
@@ -153,9 +152,9 @@ export default function BlogPage() {
                     <span className="text-muted text-xs font-body flex items-center gap-1"><Icon name="CalendarIcon" size={12} />{post.date}</span>
                     <span className="text-muted text-xs font-body flex items-center gap-1"><Icon name="ClockIcon" size={12} />{post.readTime}</span>
                   </div>
-                  <h3 className="font-heading font-800 text-lg text-foreground leading-snug mb-3 group-hover:text-primary transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}>{post.title}</h3>
+                  <h3 className="font-heading font-800 text-lg text-foreground leading-snug mb-3 group-hover:text-primary transition-colors" style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 800 }}>{post.title}</h3>
                   <p className="text-muted font-body text-sm leading-relaxed mb-5 flex-1">{post.excerpt}</p>
-                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-primary font-heading font-700 text-sm hover:gap-3 transition-all" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-primary font-heading font-700 text-sm hover:gap-3 transition-[transform,box-shadow,background-color,color,border-color,opacity]" style={{ fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 700 }}>
                     Leer más <Icon name="ArrowRightIcon" size={16} />
                   </Link>
                 </div>
@@ -170,7 +169,7 @@ export default function BlogPage() {
         <div className="container-main">
           <div className="max-w-2xl mx-auto text-center reveal-item">
             <span className="eyebrow block mb-4">¿Necesitas ayuda?</span>
-            <h2 className="section-title text-foreground mb-4">¿Planeas una <span className="text-gradient-orange italic">mudanza</span>?</h2>
+            <h2 className="section-title text-foreground mb-4">¿Planeas una <span className="text-gradient-orange">mudanza</span>?</h2>
             <p className="text-muted font-body text-lg leading-relaxed mb-8">Nuestro equipo de expertos está disponible 24h para asesorarte y ofrecerte el mejor presupuesto sin compromiso.</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/contacto" className="btn-primary text-base py-4 px-8 shadow-orange">

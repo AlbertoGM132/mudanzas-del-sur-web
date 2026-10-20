@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main">
         <section className="page-hero calc-hero">
           <div className="wrap">
             <span className="kicker">Calculadora con IA · gratis</span>
