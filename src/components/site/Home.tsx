@@ -35,7 +35,7 @@ export const FAQS: { q: string; a: React.ReactNode; texto: string }[] = [
   {
     q: "¿Trabajáis fuera de Huelva?",
     texto: "Sí. Trabajamos en Huelva capital y toda la provincia, en Sevilla y el resto de Andalucía, y hacemos mudanzas a cualquier punto de la península.",
-    a: <>Sí. Huelva capital y toda la provincia, Sevilla y el resto de Andalucía, y mudanzas a cualquier punto de la península. Para trayectos muy largos el precio lo calculamos personalmente.</>,
+    a: <>Sí. Huelva capital y toda la provincia, Sevilla y el resto de Andalucía, y mudanzas a cualquier punto de la península. Para trayectos muy largos el precio lo calculamos personalmente. Mira <Link href="/mudanzas/">todas las zonas donde trabajamos</Link>.</>,
   },
   {
     q: "¿Hacéis portes de una sola cosa?",

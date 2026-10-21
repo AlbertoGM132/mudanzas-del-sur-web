@@ -76,7 +76,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
         <div className="container-main relative z-10 py-20 md:py-28">
           <div className="max-w-2xl reveal-item">
             <nav className="flex items-center gap-2 mb-6 text-white/50 text-sm font-body flex-wrap">
-              <Link href="/home-page" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 Inicio
               </Link>
               <Icon name="ChevronRightIcon" size={14} className="text-white/30" />
