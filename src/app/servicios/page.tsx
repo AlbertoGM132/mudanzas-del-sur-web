@@ -81,7 +81,7 @@ export default function ServiciosPage() {
         <div className="container-main relative z-10 py-20 md:py-28">
           <div className="max-w-2xl reveal-item">
             <nav className="flex items-center gap-2 mb-6 text-white/50 text-sm font-body">
-              <Link href="/home-page" className="hover:text-white transition-colors">Inicio</Link>
+              <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
               <Icon name="ChevronRightIcon" size={14} className="text-white/30" />
               <span className="text-white/80">Servicios</span>
             </nav>

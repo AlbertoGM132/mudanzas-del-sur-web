@@ -35,6 +35,8 @@ export function iniciar() {
     utm_source: q.get("utm_source") || "", utm_medium: q.get("utm_medium") || "", utm_campaign: q.get("utm_campaign") || "",
     utm_content: q.get("utm_content") || "", utm_term: q.get("utm_term") || "",
     clid: ["gclid", "gbraid", "wbraid", "fbclid", "ttclid", "msclkid"].find((k) => q.has(k)) || "",
+    // El identificador del clic del anuncio: se guarda con la solicitud para decirle luego a Google qué clics acabaron en trabajo
+    clid_id: (q.get("gclid") || q.get("gbraid") || q.get("wbraid") || "").slice(0, 200),
     ref: document.referrer || "", landing: pagina(), ancho: String(window.innerWidth),
   };
   setInterval(() => enviar(), 6000);

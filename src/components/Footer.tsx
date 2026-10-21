@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { EMAIL, INSTAGRAM, TEL, TEL_HREF, wa } from "@/lib/site";
+import { ZONAS } from "@/lib/zonas";
 
 export default function Footer() {
   return (
@@ -40,6 +41,11 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+        <nav className="footer-zonas" aria-label="Zonas donde trabajamos">
+          <b>Mudanzas en</b>
+          {ZONAS.map((z) => (<Link key={z.slug} href={`/mudanzas/${z.slug}/`}>{z.nombre}</Link>))}
+          <Link href="/mudanzas/">Todas las zonas</Link>
+        </nav>
         <p className="footer-big" aria-hidden="true">Cambia de casa, <em>no de humor.</em></p>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Mudanzas del Sur · Huelva</span>

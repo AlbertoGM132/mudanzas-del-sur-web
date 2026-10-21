@@ -562,3 +562,29 @@ a.contact-line:hover { background: rgba(255, 255, 255, 0.1); transform: translat
 .calc-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px; }
 .legal-note { font-size: 0.78rem; color: var(--mute); margin-top: 22px; max-width: 46em; margin-left: auto; margin-right: auto; }
 .leaflet-container { font-family: var(--body); }
+
+/* ── Páginas de zona («Mudanzas en …») ── */
+.zona-hero { padding: 36px 0 64px; }
+.zona-hero .lead { color: rgba(238, 240, 247, 0.84); }
+.migas { font-size: 0.86rem; color: rgba(238, 240, 247, 0.7); display: flex; flex-wrap: wrap; gap: 6px; }
+.migas a { color: rgba(238, 240, 247, 0.85); text-underline-offset: 3px; }
+.migas a:hover { color: #fff; }
+.zona-datos { display: flex; flex-wrap: wrap; gap: 14px 36px; margin-top: 34px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.zona-datos dt { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--lime); font-weight: 700; }
+.zona-datos dd { margin: 4px 0 0; color: #fff; font-weight: 600; max-width: 32em; }
+@media (min-width: 1100px) { .zona-notas { grid-template-columns: repeat(3, 1fr); } }
+.zona-servicios { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.zona-servicio { padding: 24px; display: grid; gap: 8px; align-content: start; }
+.zona-cta { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; padding: 22px 24px; border-radius: var(--radius); background: var(--bg); border: 1px solid var(--line); }
+.zona-cta p { flex: 1 1 320px; color: var(--ink-2); }
+.zonas-lista { list-style: none; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.zonas-lista a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; padding: 18px 20px; border-radius: 18px; background: var(--paper); border: 1px solid var(--line); text-decoration: none; transition: border-color 0.25s, transform 0.35s var(--ease); }
+.zonas-lista a:hover { border-color: var(--ink); transform: translateY(-2px); }
+.zonas-lista b { font-weight: 700; }
+.zonas-lista span { grid-column: 1; color: var(--mute); font-size: 0.88rem; }
+.zonas-lista svg { grid-row: 1 / span 2; grid-column: 2; width: 18px; height: 18px; color: var(--accent-2); }
+.paper .zonas-lista a { background: var(--bg); }
+.footer-zonas { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(238, 240, 247, 0.12); font-size: 0.88rem; }
+.footer-zonas b { color: rgba(238, 240, 247, 0.55); font-weight: 600; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; width: 100%; }
+.footer-zonas a { color: rgba(238, 240, 247, 0.8); text-decoration: none; }
+.footer-zonas a:hover { color: #fff; text-decoration: underline; }
