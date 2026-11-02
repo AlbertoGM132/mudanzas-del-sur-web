@@ -67,7 +67,7 @@ export default function ContactForm() {
         </div>
       </div>
       <div className="field"><label htmlFor="c-msg">Mensaje</label><textarea id="c-msg" name="mensaje" className="textarea" value={f.mensaje} onChange={set("mensaje")} placeholder="Piso, ascensor, muebles grandes, fecha que te viene bien…" /></div>
-      <input className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" value={f.web} onChange={set("web")} name="web" />
+      <input className="hp" tabIndex={-1} autoComplete="off" data-lpignore="true" data-1p-ignore="" data-form-type="other" aria-hidden="true" value={f.web} onChange={set("web")} name="hp_no_rellenar" />
       <label className="check"><input type="checkbox" checked={acepto} onChange={(e) => setAcepto(e.target.checked)} />
         <span>Acepto que Mudanzas del Sur use estos datos para contestarme y preparar mi presupuesto (<Link href="/privacidad/">privacidad</Link>).</span></label>
       {err && <p className="form-error" role="alert">{err}</p>}

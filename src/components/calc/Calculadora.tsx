@@ -433,7 +433,7 @@ export default function Calculadora() {
               <div className="field"><label htmlFor="t">Teléfono / WhatsApp</label><input id="t" name="telefono" type="tel" className="input" inputMode="tel" autoComplete="tel" placeholder="Ej.: 612 345 678…" value={c.telefono} onChange={(e) => setC({ ...c, telefono: e.target.value })} /></div>
               <div className="field"><label htmlFor="e">Email</label><input id="e" name="email" className="input" type="email" autoComplete="email" spellCheck={false} placeholder="tu@email.com…" value={c.email} onChange={(e) => setC({ ...c, email: e.target.value })} /></div>
             </div>
-            <input className="hp" name="web" tabIndex={-1} autoComplete="off" aria-hidden="true" value={c.web} onChange={(e) => setC({ ...c, web: e.target.value })} />
+            <input className="hp" name="hp_no_rellenar" tabIndex={-1} autoComplete="off" data-lpignore="true" data-1p-ignore="" data-form-type="other" aria-hidden="true" value={c.web} onChange={(e) => setC({ ...c, web: e.target.value })} />
             <label className="check"><input type="checkbox" checked={acepto} onChange={(e) => setAcepto(e.target.checked)} />
               <span>Acepto que Mudanzas del Sur guarde estos datos y mis fotos para prepararme el presupuesto y contactarme. Las fotos las analiza la IA de Google solo para hacer la lista de muebles. <Link href="/privacidad/" target="_blank">Privacidad</Link>.</span></label>
           </section>
