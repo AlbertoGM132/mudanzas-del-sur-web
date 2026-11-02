@@ -588,3 +588,11 @@ a.contact-line:hover { background: rgba(255, 255, 255, 0.1); transform: translat
 .footer-zonas b { color: rgba(238, 240, 247, 0.55); font-weight: 600; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; width: 100%; }
 .footer-zonas a { color: rgba(238, 240, 247, 0.8); text-decoration: none; }
 .footer-zonas a:hover { color: #fff; text-decoration: underline; }
+
+/* Aviso de cookies (Google Ads solo con aceptación) */
+.aviso-cookies { position: fixed; left: calc(12px + env(safe-area-inset-left)); right: calc(12px + env(safe-area-inset-right)); bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 90; max-width: 620px; margin: 0 auto; background: var(--paper); color: var(--ink); border: 1px solid var(--line-2); border-radius: 16px; box-shadow: 0 18px 40px rgba(20, 26, 51, 0.22); padding: 16px 18px; display: grid; gap: 12px; }
+.aviso-cookies p { margin: 0; font-size: 0.95rem; line-height: 1.45; }
+.aviso-cookies a { color: var(--accent-2); }
+.aviso-cookies-botones { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+.aviso-cookies-botones .btn { min-height: 44px; flex: 1 1 140px; justify-content: center; }
+.link-cookies { background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }

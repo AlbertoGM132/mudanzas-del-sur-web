@@ -5,6 +5,7 @@ import Link from "next/link";
 import { api } from "@/lib/site";
 import { atribucion, ev } from "@/lib/analitica";
 import { ISend } from "./Icons";
+import { conversion } from "@/lib/googleAds";
 
 const SERV = [
   { k: "mudanza", t: "Mudanza completa" }, { k: "porte", t: "Porte" },
@@ -28,7 +29,7 @@ export default function ContactForm() {
     setBusy(true); setErr("");
     const r = await api("contacto", { ...f, servicios: serv, t: Date.now() - t0.current, atribucion: atribucion() });
     setBusy(false);
-    if (r.ok) { setOk(true); ev("lead", { tipo: "contacto" }); } else setErr(r.error || "No se ha podido enviar.");
+    if (r.ok) { setOk(true); ev("lead", { tipo: "contacto" }); conversion("solicitud"); } else setErr(r.error || "No se ha podido enviar.");
   }
 
   if (ok) return (

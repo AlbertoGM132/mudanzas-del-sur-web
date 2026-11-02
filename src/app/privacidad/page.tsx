@@ -47,7 +47,9 @@ export default function Page() {
 
             <h2 id="aviso-legal">Aviso legal</h2>
             <p>Esta web es del titular indicado arriba. Los precios que muestra la calculadora son estimaciones orientativas calculadas automáticamente y no constituyen una oferta vinculante: el precio final es el del presupuesto que te confirmamos. Las opiniones marcadas como «Ejemplo» son textos ilustrativos.</p>
-            <p>Esta web no usa cookies: ni de publicidad ni de analítica (las estadísticas de uso se miden sin cookies, como se explica arriba). El mapa y las fuentes tipográficas se cargan desde servicios externos.</p>
+            <h2 id="cookies">Cookies</h2>
+            <p>Las estadísticas de uso de la web se miden sin cookies, como se explica arriba. La única cookie es la de <b>Google Ads</b>, y solo si la aceptas en el aviso: sirve para saber si llegaste desde uno de nuestros anuncios y si después nos pediste presupuesto o nos escribiste por WhatsApp, para no gastar en anuncios que no funcionan. No la usamos para enseñarte publicidad personalizada. Si la rechazas, no se carga nada de Google y la web funciona igual. Puedes cambiar tu elección cuando quieras con el enlace «Cookies» del pie de página. Recordamos tu elección en tu navegador.</p>
+            <p>El mapa y las fuentes tipográficas se cargan desde servicios externos.</p>
           </div>
         </section>
       </main>

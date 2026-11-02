@@ -5,6 +5,7 @@ import "../styles/site.css";
 import ChatWidget from "@/components/site/ChatWidget";
 import Effects from "@/components/site/Effects";
 import Analitica from "@/components/site/Analitica";
+import AvisoCookies from "@/components/site/AvisoCookies";
 import { EMAIL, INSTAGRAM, SITE_URL } from "@/lib/site";
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#141a33" };
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ChatWidget />
         <Effects />
         <Analitica />
+        <AvisoCookies />
       </body>
     </html>
   );

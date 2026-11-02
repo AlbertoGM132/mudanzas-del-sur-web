@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { EMAIL, INSTAGRAM, TEL, TEL_HREF, wa } from "@/lib/site";
 import { ZONAS } from "@/lib/zonas";
+import { CambiarCookies } from "@/components/site/AvisoCookies";
 
 export default function Footer() {
   return (
@@ -52,6 +53,7 @@ export default function Footer() {
           <span style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
             <Link href="/privacidad/">Privacidad</Link>
             <Link href="/privacidad/#aviso-legal">Aviso legal</Link>
+            <CambiarCookies />
           </span>
         </div>
       </div>
