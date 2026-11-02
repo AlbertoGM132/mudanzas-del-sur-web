@@ -67,6 +67,9 @@ export default function Calculadora() {
   const [err, setErr] = useState("");
   const [enviando, setEnviando] = useState(false);
   const [estudio, setEstudio] = useState<Estudio | null>(null);
+  // Casa completa con muy pocas cosas marcadas: ¿es un porte?
+  const [preguntaPocas, setPreguntaPocas] = useState(false);
+  const [casaConfirmada, setCasaConfirmada] = useState(false);
   const top = useRef<HTMLDivElement>(null);
 
   // Analítica: en qué paso está cada visita (para ver dónde se atasca la gente)
@@ -147,6 +150,10 @@ export default function Calculadora() {
     if (i < 0) return d > 0 ? [...xs, { id: uid(), nombre: CATS[cat].nombre, categoria: cat, cantidad: d }] : xs;
     return xs.map((x, j) => (j === i ? { ...x, cantidad: Math.max(0, x.cantidad + d) } : x)).filter((x) => x.cantidad > 0);
   });
+  // Piezas marcadas (sin contar cajas ni maletas)
+  const piezas = items.filter((x) => x.categoria !== "caja" && x.categoria !== "maleta").reduce((a, x) => a + x.cantidad, 0);
+  useEffect(() => { setPreguntaPocas(false); }, [items.length, tipo]);
+
   const cuantos = (cat: string) => items.filter((x) => x.categoria === cat).reduce((a, x) => a + x.cantidad, 0);
 
   const L = ladoCamion === "origen" ? origen : destino;
@@ -172,6 +179,9 @@ export default function Calculadora() {
     const e = puedeSeguir();
     if (e) { setErr(e); return; }
     if (paso === 5) { enviar(); return; }
+    if (paso === 1 && tipo === "casa" && !casaConfirmada && piezas >= 1 && piezas <= 4) {
+      setPreguntaPocas(true); ev("calc_pocas", { piezas }); return;
+    }
     irA(paso + 1);
   }
 
@@ -333,6 +343,21 @@ export default function Calculadora() {
               </div>
               {tipo === "casa" && <p className="muted small" style={{ marginTop: 10 }}>Si no pones nada, calculamos con el tamaño de la vivienda.</p>}
             </details>
+
+            {preguntaPocas && (
+              <div className="pregunta-pocas" role="alertdialog" aria-labelledby="pocas-t" aria-describedby="pocas-d">
+                <b id="pocas-t">Solo has marcado {piezas} {piezas === 1 ? "cosa" : "cosas"}.</b>
+                <p id="pocas-d">¿Es todo lo que hay que llevar, o es la casa entera y solo has puesto lo grande?</p>
+                <div className="pregunta-pocas-botones">
+                  <button type="button" className="btn btn-accent" onClick={() => {
+                    setTipo("porte"); setCasa(null); setPreguntaPocas(false); ev("calc_pocas_respuesta", { r: "porte" }); irA(2);
+                  }}>Solo esto: es un porte</button>
+                  <button type="button" className="btn btn-ghost" onClick={() => {
+                    setCasaConfirmada(true); setPreguntaPocas(false); ev("calc_pocas_respuesta", { r: "casa" }); irA(2);
+                  }}>Es la casa entera</button>
+                </div>
+              </div>
+            )}
           </section>
         )}
 

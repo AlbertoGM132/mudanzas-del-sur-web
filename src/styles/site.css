@@ -596,3 +596,9 @@ a.contact-line:hover { background: rgba(255, 255, 255, 0.1); transform: translat
 .aviso-cookies-botones { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
 .aviso-cookies-botones .btn { min-height: 44px; flex: 1 1 140px; justify-content: center; }
 .link-cookies { background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Calculadora: casa completa con muy pocas cosas marcadas */
+.pregunta-pocas { margin-top: 18px; padding: 16px 18px; border-radius: 14px; background: #fff6e5; border: 1px solid #f7d9a4; color: var(--ink); display: grid; gap: 8px; }
+.pregunta-pocas p { margin: 0; color: var(--ink-2); }
+.pregunta-pocas-botones { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.pregunta-pocas-botones .btn { min-height: 44px; flex: 1 1 200px; justify-content: center; }
