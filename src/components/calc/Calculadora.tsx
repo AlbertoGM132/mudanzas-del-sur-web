@@ -222,7 +222,7 @@ export default function Calculadora() {
           {estudio.sin_precio ? (
             <>
               <h2 className="h2" style={{ margin: "14px 0 10px" }}>{nombre}, este lo calculamos <em>a mano.</em></h2>
-              <p className="lead">Por la distancia ({estudio.km} km en total) preferimos prepararte el precio personalmente. Ya tenemos tus datos y tus fotos: te escribimos por WhatsApp.</p>
+              <p className="lead">Por la distancia ({estudio.km} km) preferimos prepararte el precio personalmente. Ya tenemos tus datos y tus fotos: te escribimos por WhatsApp.</p>
             </>
           ) : (
             <>
@@ -236,7 +236,7 @@ export default function Calculadora() {
             <div><dt>Vehículo</dt><dd>{estudio.vehiculo}</dd></div>
             <div><dt>Equipo</dt><dd>{estudio.personas} personas</dd></div>
             <div><dt>Tiempo</dt><dd>≈ {estudio.horas.toLocaleString("es-ES")} h{estudio.dias > 1 ? ` (${estudio.dias} días)` : ""}</dd></div>
-            <div><dt>Recorrido</dt><dd>{estudio.km} km</dd></div>
+            <div><dt>Distancia</dt><dd>{estudio.km} km</dd></div>
             <div><dt>Ruta</dt><dd>{origen.lugar?.poblacion || "Origen"} → {destino.lugar?.poblacion || "Destino"}</dd></div>
           </dl>
           {estudio.especiales.length > 0 && <p className="aviso">⚠️ {estudio.especiales.join(", ")}: lo presupuestamos aparte cuando veamos las fotos.</p>}
