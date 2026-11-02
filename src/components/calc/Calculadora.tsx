@@ -8,6 +8,7 @@ import { atribucion, ev } from "@/lib/analitica";
 import { CASAS, CATS, ESPECIALES, Item, PISOS, RAPIDOS, comprimir, metros, uid, volumen } from "./datos";
 import Buscador, { Lugar } from "./Buscador";
 import { IArrow, ICamera, ISpark, IWhatsApp } from "@/components/site/Icons";
+import { conversion } from "@/lib/googleAds";
 
 const Mapa = dynamic(() => import("./Mapa"), { ssr: false, loading: () => <div className="mapa mapa-cargando">Cargando mapa…</div> });
 
@@ -194,6 +195,7 @@ export default function Calculadora() {
     setEstudio(r.estudio);
     ev("calc_resultado", { min: r.estudio.min, max: r.estudio.max, m3: r.estudio.m3, sin_precio: r.estudio.sin_precio });
     ev("lead", { tipo: "calculadora" });
+    conversion("solicitud");
     irA(6);
   }
 

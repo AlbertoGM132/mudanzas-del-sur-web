@@ -4,6 +4,7 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { enviar, ev, iniciar } from "@/lib/analitica";
+import { conversion } from "@/lib/googleAds";
 
 function queEs(el: Element): string | null {
   const propio = el.getAttribute("data-ev");
@@ -42,6 +43,7 @@ export default function Analitica() {
       if (!el) return;
       const que = queEs(el);
       if (que) ev("clic", { que, zona: zonaDe(el), texto: (el.textContent || "").trim().slice(0, 40) });
+      if (que === "whatsapp") conversion("whatsapp");
     };
     const vis = () => {
       const p = pag.current;
