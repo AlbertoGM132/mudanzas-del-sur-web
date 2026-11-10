@@ -67,9 +67,8 @@ export default function Calculadora() {
   const [err, setErr] = useState("");
   const [enviando, setEnviando] = useState(false);
   const [estudio, setEstudio] = useState<Estudio | null>(null);
-  // Casa completa con muy pocas cosas marcadas: ¿es un porte?
+  // Casa completa con muy pocas cosas marcadas: ¿es todo o le faltan cosas por marcar?
   const [preguntaPocas, setPreguntaPocas] = useState(false);
-  const [casaConfirmada, setCasaConfirmada] = useState(false);
   const top = useRef<HTMLDivElement>(null);
 
   // Analítica: en qué paso está cada visita (para ver dónde se atasca la gente)
@@ -163,7 +162,8 @@ export default function Calculadora() {
   function puedeSeguir(): string {
     if (paso === 0 && !tipo) return "Elige si es una casa completa o unas cosas.";
     if (paso === 0 && tipo === "casa" && !casa) return "Dinos el tamaño de la vivienda.";
-    if (paso === 1 && tipo === "porte" && !items.length) return "Añade al menos una cosa que haya que llevar.";
+    if (paso === 1 && !items.length) return tipo === "porte" ? "Añade al menos una cosa que haya que llevar."
+      : "Marca lo que hay que llevar: solo presupuestamos y movemos lo que esté en tu lista.";
     if (paso === 1 && ia === "analizando") return "Espera a que la IA termine de mirar las fotos.";
     if (paso === 2 && (!origen.lugar || !destino.lugar)) return "Busca y elige las dos direcciones (o toca en el mapa).";
     if (paso === 5) {
@@ -179,7 +179,7 @@ export default function Calculadora() {
     const e = puedeSeguir();
     if (e) { setErr(e); return; }
     if (paso === 5) { enviar(); return; }
-    if (paso === 1 && tipo === "casa" && !casaConfirmada && piezas >= 1 && piezas <= 4) {
+    if (paso === 1 && tipo === "casa" && piezas >= 1 && piezas <= 4) {
       setPreguntaPocas(true); ev("calc_pocas", { piezas }); return;
     }
     irA(paso + 1);
@@ -341,20 +341,20 @@ export default function Calculadora() {
                   </div>
                 ))}
               </div>
-              {tipo === "casa" && <p className="muted small" style={{ marginTop: 10 }}>Si no pones nada, calculamos con el tamaño de la vivienda.</p>}
+              {tipo === "casa" && <p className="muted small" style={{ marginTop: 10 }}>Solo llevamos y presupuestamos lo que marques. Añade también cajas, lámparas o electrodomésticos si van.</p>}
             </details>
 
             {preguntaPocas && (
               <div className="pregunta-pocas" role="alertdialog" aria-labelledby="pocas-t" aria-describedby="pocas-d">
                 <b id="pocas-t">Solo has marcado {piezas} {piezas === 1 ? "cosa" : "cosas"}.</b>
-                <p id="pocas-d">¿Es todo lo que hay que llevar, o es la casa entera y solo has puesto lo grande?</p>
+                <p id="pocas-d">Solo llevamos y presupuestamos lo que marques. ¿Es todo lo que hay que llevar?</p>
                 <div className="pregunta-pocas-botones">
                   <button type="button" className="btn btn-accent" onClick={() => {
                     setTipo("porte"); setCasa(null); setPreguntaPocas(false); ev("calc_pocas_respuesta", { r: "porte" }); irA(2);
-                  }}>Solo esto: es un porte</button>
+                  }}>Sí, es todo</button>
                   <button type="button" className="btn btn-ghost" onClick={() => {
-                    setCasaConfirmada(true); setPreguntaPocas(false); ev("calc_pocas_respuesta", { r: "casa" }); irA(2);
-                  }}>Es la casa entera</button>
+                    setPreguntaPocas(false); ev("calc_pocas_respuesta", { r: "faltan" });
+                  }}>Me falta marcar cosas</button>
                 </div>
               </div>
             )}
