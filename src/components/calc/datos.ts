@@ -57,15 +57,10 @@ export const ESPECIALES = [
 
 export type Item = { id: string; nombre: string; categoria: string; cantidad: number; ia?: boolean };
 
-/** Mismo cálculo de volumen que el servidor (para enseñarlo mientras el cliente edita). */
-export function volumen(items: Item[], tipo: "casa" | "porte", casa: string | null) {
-  let s = items.reduce((a, it) => a + (CATS[it.categoria]?.m3 ?? 0.4) * Math.max(0, it.cantidad), 0);
-  if (tipo === "casa") {
-    s *= 1.15;
-    const c = CASAS.find((x) => x.k === casa);
-    if (c) s = s ? Math.min(Math.max(s, c.m3[0]), c.m3[1] * 1.2) : (c.m3[0] + c.m3[1]) / 2;
-  }
-  return Math.round(Math.max(s, items.length || casa ? 0.5 : 0) * 10) / 10;
+/** Mismo cálculo de volumen que el servidor: solo lo marcado (lo que no se marca no se presupuesta ni se mueve). */
+export function volumen(items: Item[], _tipo: "casa" | "porte", _casa: string | null) {
+  const s = items.reduce((a, it) => a + (CATS[it.categoria]?.m3 ?? 0.4) * Math.max(0, it.cantidad), 0);
+  return Math.round(Math.max(s, items.length ? 0.5 : 0) * 10) / 10;
 }
 
 export const uid = () => Math.random().toString(36).slice(2, 10);
