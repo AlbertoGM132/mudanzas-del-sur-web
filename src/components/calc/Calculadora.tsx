@@ -341,13 +341,13 @@ export default function Calculadora() {
                   </div>
                 ))}
               </div>
-              {tipo === "casa" && <p className="muted small" style={{ marginTop: 10 }}>Solo llevamos y presupuestamos lo que marques. Añade también cajas, lámparas o electrodomésticos si van.</p>}
+              {tipo === "casa" && <p className="muted small" style={{ marginTop: 10 }}>Solo llevamos y presupuestamos lo que marques aquí o nos cuentes en el comentario del último paso. Añade también cajas, lámparas o electrodomésticos si van.</p>}
             </details>
 
             {preguntaPocas && (
               <div className="pregunta-pocas" role="alertdialog" aria-labelledby="pocas-t" aria-describedby="pocas-d">
                 <b id="pocas-t">Solo has marcado {piezas} {piezas === 1 ? "cosa" : "cosas"}.</b>
-                <p id="pocas-d">Solo llevamos y presupuestamos lo que marques. ¿Es todo lo que hay que llevar?</p>
+                <p id="pocas-d">Solo llevamos y presupuestamos lo que marques o nos cuentes. ¿Es todo lo que hay que llevar?</p>
                 <div className="pregunta-pocas-botones">
                   <button type="button" className="btn btn-accent" onClick={() => {
                     setTipo("porte"); setCasa(null); setPreguntaPocas(false); ev("calc_pocas_respuesta", { r: "porte" }); irA(2);
@@ -444,7 +444,7 @@ export default function Calculadora() {
               {cuando === "fecha" && <input type="date" name="fecha" className="input" style={{ maxWidth: 260, marginTop: 8 }} value={fecha} min={new Date().toISOString().slice(0, 10)} onChange={(e) => setFecha(e.target.value)} />}
             </div>
             <div className="field"><label htmlFor="cm">¿Algo más que debamos saber? <span className="muted">(opcional)</span></label>
-              <textarea id="cm" name="comentario" className="textarea" value={comentario} onChange={(e) => setComentario(e.target.value)} maxLength={1200} placeholder="Calle estrecha, ascensor pequeño, hay que dejar algo en un trastero…" /></div>
+              <textarea id="cm" name="comentario" className="textarea" value={comentario} onChange={(e) => setComentario(e.target.value)} maxLength={1200} placeholder="¿Algo más que llevar que no esté en la lista? Cuéntalo aquí (por ejemplo: 3 cajoneras y una mesa de jardín). Y lo que debamos saber: calle estrecha, ascensor pequeño…" /></div>
           </section>
         )}
 
