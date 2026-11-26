@@ -6,7 +6,7 @@ import Link from "next/link";
 import { api, TEL, wa } from "@/lib/site";
 import { atribucion, ev } from "@/lib/analitica";
 import { CASAS, CATS, ESPECIALES, Item, PISOS, RAPIDOS, comprimir, metros, uid, volumen } from "./datos";
-import Buscador, { Lugar } from "./Buscador";
+import Buscador, { Lugar, direccionDe } from "./Buscador";
 import { IArrow, ICamera, ISpark, IWhatsApp } from "@/components/site/Icons";
 import { conversion } from "@/lib/googleAds";
 
@@ -386,9 +386,14 @@ export default function Calculadora() {
               ))}
             </div>
             <Mapa modo="ruta" origen={origen.lugar} destino={destino.lugar} ruta={ruta?.coords}
-              onClick={(p) => {
-                const lg = { label: "Punto marcado en el mapa", calle: "Punto marcado en el mapa", poblacion: "", ...p };
-                if (!origen.lugar) setOrigen({ ...origen, lugar: lg }); else if (!destino.lugar) setDestino({ ...destino, lugar: lg });
+              onClick={async (p) => {
+                // Se pone el punto al momento y la dirección llega en cuanto la encuentra
+                const lado = !origen.lugar ? "origen" : !destino.lugar ? "destino" : null;
+                if (!lado) return;
+                const set = lado === "origen" ? setOrigen : setDestino;
+                set((l) => ({ ...l, lugar: { label: "Buscando la dirección…", calle: "", poblacion: "", ...p } }));
+                const lg = await direccionDe(p);
+                set((l) => (l.lugar && l.lugar.lat === p.lat && l.lugar.lng === p.lng ? { ...l, lugar: lg } : l));
               }} />
             <p className="map-info">{ruta ? <>🛣 <b>{ruta.km.toLocaleString("es-ES")} km</b> entre las dos direcciones{ruta.aprox ? " (aprox.)" : " por carretera"}</> : "Busca las direcciones o toca en el mapa para marcarlas."}</p>
           </section>
